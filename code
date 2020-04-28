@@ -1,0 +1,83 @@
+import java.io.*;
+
+import java.lang.System.*;
+
+import java.util.Scanner;
+
+import java.lang.Math;
+
+
+
+public class Gradingpolicy{
+
+public static void main(String str[]){
+
+Scanner scan = new Scanner(System.in);
+
+final double semesterOne = 87.89;
+
+final double nineWeek = 80.79;
+
+double num1 = (semesterOne + nineWeek) / 2.0;
+
+int avg1 = (int) num1;
+
+if ((double)num1 % avg1 >= 0.5)
+
+   avg1 = avg1 + 1;
+
+if (avg1 >= 90)
+
+   System.out.println("A");
+
+else
+
+   System.out.println("Your grade with just Semester 1 and the 9 weeks is " + avg1 + ". If you are satisfied, enter YES. Otherwise, enter NO.");
+
+String answer = scan.nextLine();
+
+if (answer.toUpperCase == "NO")
+
+{
+
+   System.out.println("Enter your overall Semester 2 grade.");
+
+   double semesterTwo = scan.nextDouble();
+
+   double greater = 0;
+
+   if (semesterTwo > nineWeek)
+
+      greater = semesterTwo;
+
+   else
+
+      greater = nineWeek;
+
+}
+
+double num2 = (semesterOne + greater) / 2.0;
+
+int avg2 = (int) num2;
+
+if ((double)num2 % avg2 >= 0.5)
+
+   avg2 = avg2 + 1;
+
+System.out.println("Your average is " + avg2);
+
+if (avg1 > 60){
+
+   if (avg2 - avg1 >= 10)
+
+      System.out.println("You have advanced to the next letter grade.");
+
+}
+
+double gradeRequired = (num1/10 * 10 + 9.5) *2.0 - num1;
+
+System.out.println("You need a " + gradeRequired + " to advance to the next letter grade.");
+
+}
+
+}
